@@ -19,7 +19,7 @@ def lambda_handler(event, context):
     sunset = str(datetime.fromtimestamp(sunset_sys))
    
     http=urllib3.PoolManager()
-    data={"text":f"sunrise: {sunrise} / sunset {sunset} / location: {location} / temp: {main_temp}F "}
+    data={"text":f"sunrise: {sunrise} / sunset {sunset} / location: {location} / temp: {main_temp}F"}
     r = http.request("POST",
                     "https://hooks.slack.com/services/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",
                     body = json.dumps(data),
